@@ -63,6 +63,7 @@ $config['payroll_status'] = array(
 ); 
 
 $default_payment_modes = array(
+    'Credit Sale'              => 'Credit Sale',
     'Cash'                     => lang('cash'),
     'Pending'                  => 'Pending',
     'ZAAD'                     => 'ZAAD',
