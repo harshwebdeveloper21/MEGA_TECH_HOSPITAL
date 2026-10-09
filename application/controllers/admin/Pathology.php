@@ -2174,6 +2174,7 @@ class Pathology extends Admin_Controller
                             'pathology_report_id'          => $pathology_report_id,
                             'pathology_parameterdetail_id' => $row_value,
                             'pathology_report_value'       => $this->input->post('pathology_parameter_' . $row_value, TRUE),
+                            'flag'                         => $this->input->post('pathology_flag_' . $row_value, TRUE),
                         );
                     } else {
                         $update_array[] = array(
@@ -2181,6 +2182,7 @@ class Pathology extends Admin_Controller
                             'pathology_report_id'          => $pathology_report_id,
                             'pathology_parameterdetail_id' => $row_value,
                             'pathology_report_value'       => $this->input->post('pathology_parameter_' . $row_value, TRUE),
+                            'flag'                         => $this->input->post('pathology_flag_' . $row_value, TRUE),
                         );
                     }
                 }
