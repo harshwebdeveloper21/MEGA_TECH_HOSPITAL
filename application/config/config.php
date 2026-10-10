@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'https://hospital.megatech.so/';
-$config['base_url'] = 'http://localhost/MEGA_TECH_HOSPITAL';
+$config['base_url'] = 'http://localhost/mege-tech-hospital';
 
 /*
 |--------------------------------------------------------------------------
