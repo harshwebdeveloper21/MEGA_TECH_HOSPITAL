@@ -1645,7 +1645,10 @@ class Radio extends Admin_Controller
     public function getReportCollectionDetail()
     {
         $id = $this->input->post('id', TRUE);
-        $radiology_center = "In-House Radiology Lab";
+        $radiology_center = $this->customlib->getAppName();
+        if (empty($radiology_center)) {
+            $radiology_center = "In-House Radiology Lab";
+        }
         $report           = $this->radio_model->getRadiologyReportByID($id);
 
         if (!empty($report)) {

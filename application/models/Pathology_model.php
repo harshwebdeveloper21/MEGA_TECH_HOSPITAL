@@ -10,6 +10,11 @@ class Pathology_model extends MY_Model
     {
         parent::__construct();
         $this->load->model('Pathology_category_model');
+        
+        // Auto-fix for live environments missing the 'flag' column
+        if (!$this->db->field_exists('flag', 'pathology_report_parameterdetails')) {
+            $this->db->query("ALTER TABLE pathology_report_parameterdetails ADD COLUMN flag VARCHAR(50) NULL");
+        }
     }
 
     public function add($data, $insert_parameter_array, $update_parameter_array, $deleted_parameter_array)

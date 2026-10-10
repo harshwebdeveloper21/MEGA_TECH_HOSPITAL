@@ -2061,7 +2061,10 @@ class Pathology extends Admin_Controller
     {
         $id     = $this->input->post('id', TRUE);
         $charge = array();
-        $pathology_center = $this->lang->line('in_house_pathology_lab');
+        $pathology_center = $this->customlib->getAppName();
+        if (empty($pathology_center)) {
+            $pathology_center = $this->lang->line('in_house_pathology_lab');
+        }
         $report           = $this->pathology_model->getPathologyReportByID($id);
         if (!empty($report)) {
             if ($report['pathology_center'] == "") {
